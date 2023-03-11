@@ -10,7 +10,6 @@ import { signin } from "../../api/AuthApi";
 import signupLogo from '../../assets/Images/signup3.svg';
 import { COLORS } from "../../assets/styles/Color";
 import { useNavigate } from "react-router-dom";
-import Notification from "../Shared/Notification";
 
 const useStyles = makeStyles(() => ({
     signup:{
@@ -74,7 +73,11 @@ const Signup = () => {
                 }
             }).then(data => {
                 if(data.signedUp){
-                    navigate('/auth/login')
+                    setSignedIn(true)
+                    setTimeout(() => {
+                        navigate('/auth/login')
+                    },1000)
+                    
                 }else{
                     setSigningError({error:true,message:'Something went wrong'})
                 }

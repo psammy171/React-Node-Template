@@ -8,7 +8,6 @@ import Button from "../Shared/Button";
 import Link from "../Shared/Link";
 import { login as loginApi } from "../../api/AuthApi";
 import loginLogo from '../../assets/Images/login.svg';
-import { COLORS } from "../../assets/styles/Color";
 
 
 const useStyles = makeStyles(() => ({
