@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-build":"node -e \"require('fs').rmSync('./dist',{recursive:true,force:true})\"",
     "build-server": "npx webpack --config webpack.config.js",
     "build-client": "cd ./client && npm i --legacy-peer-deps && npm run build",
-    "build": "npm run build-server && npm run build-client",
+    "build": "npm run pre-build && npm run build-server && npm run build-client",
     "pre-deploy": "move ./client/build ./dist/",
     "local": "npm run pre-deploy && node ./dist/main.js",
     "start": "npm run build && npm run local",
