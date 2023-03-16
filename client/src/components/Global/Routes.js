@@ -3,26 +3,25 @@ import Login from '../Auth/Login';
 import Signup from '../Auth/Signup';
 import ForgotPassword from '../Auth/ForgotPassword';
 import Field from '../Views/Field';
-import Error from '../Views/Error';
+import Error from './Error';
 import { Routes, Route, Outlet } from "react-router-dom";
 import ResetPassword from '../Auth/ResetPassword';
-import Footer from './Footer';
-import Header from './Header';
 import Profile from '../Auth/Profile';
 import Products from '../Views/Products';
 import Services from '../Views/Services';
+import Skeleton from './Skeleton';
 
 const Routs = () => {
     return (
         <>
             <Routes>
-                <Route path='/' element={<><Header/><Outlet/><Footer/></>}>
+                <Route path='/' element={<Skeleton><Outlet/></Skeleton>}>
                     <Route path='' element={<Home />} />
                     <Route path='products' element={<Products />}/>
                     <Route path='services' element={<Services />} />
                     <Route path='field' element={<Field />} />
                 </Route>
-                <Route path="/auth" element={<><Outlet /><Footer/></>}>
+                <Route path="/auth" element={<Skeleton><Outlet /></Skeleton>}>
                     <Route index element={<Error />} />
                     <Route path='login' element={<Login />}/>
                     <Route path='signup' element={<Signup />}/>
@@ -30,7 +29,7 @@ const Routs = () => {
                     <Route path='forgot-password' element={<ForgotPassword />} />
                     <Route path='reset-password' exact element={<ResetPassword />} />
                 </Route>
-                <Route path="*" element={<Error />} />
+                <Route path="*" element={<Skeleton><Error /></Skeleton>} />
             </Routes> 
         </>
     )
