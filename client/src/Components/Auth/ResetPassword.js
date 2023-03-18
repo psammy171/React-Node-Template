@@ -4,7 +4,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import Card from '../Shared/Card';
 import Text from '../Shared/Text';
 import { useNavigate } from "react-router-dom";
-import Input from '../Shared/Input';
+import Input from '../Shared/FormInput';
 import { COLORS } from "../../assets/styles/Color";
 import Button from '../Shared/Button';
 

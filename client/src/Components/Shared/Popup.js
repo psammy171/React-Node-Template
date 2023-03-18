@@ -13,7 +13,6 @@ const useStyles = makeStyles(() => ({
     right: "0px",
     bottom: "0px",
     position: "fixed",
-    transition:"all 0.2s ease-out",
     backgroundColor: "#000000b3",
   },
   popUp: {
@@ -45,17 +44,19 @@ const useStyles = makeStyles(() => ({
   close: {
     opacity: 0,
   },
+  title:{
+    fontWeight:'bold',
+    fontSize:'26px',
+  }
 }));
 
 const Popup = (props) => {
   const classes = useStyles();
 
   return (
-    <div
-      className={`${classes.root} ${props.open ? classes.open : classes.close}`}
-    >
+    <div className={`${classes.root} ${props.open ? classes.open : classes.close}`}>
       <Card className={`${classes.popUp} ${props?.className}`} style={props?.style}>
-        <Text variant="sub-heading">Title</Text>
+        <Text className={classes.title} variant="sub-heading">{props.title}</Text>
         <img
           className={classes.closeIcon}
           src={close}

@@ -10,6 +10,7 @@ import Profile from '../Auth/Profile';
 import Products from '../Views/Products';
 import Services from '../Views/Services';
 import Skeleton from './Skeleton';
+import Finance from '../Finance/Finance';
 
 const Routs = () => {
     return (
@@ -28,6 +29,9 @@ const Routs = () => {
                     <Route path='profile' element={<Profile />} />
                     <Route path='forgot-password' element={<ForgotPassword />} />
                     <Route path='reset-password' exact element={<ResetPassword />} />
+                </Route>
+                <Route path="/finance" element={<Skeleton><Outlet/></Skeleton>}>
+                    <Route index element={<Finance />} />
                 </Route>
                 <Route path="*" element={<Skeleton><Error /></Skeleton>} />
             </Routes> 

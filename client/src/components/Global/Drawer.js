@@ -15,7 +15,7 @@ const useStyles = makeStyles((props) => ({
         height:'100vh',
         zIndex:200,
         backgroundColor:COLORS.primary,
-        transition:'left 0.3s ease-out',
+        transition:'left 0.2s ease-out',
     },
     drawerBg:{
         position:'absolute',
@@ -28,7 +28,7 @@ const useStyles = makeStyles((props) => ({
         opacity:(props) => props.open === true ? 1 : 0 ,
         visibility:(props) => props.drawerDisplay,
         backgroundColor:'rgba(0,0,0,0.5)',
-        transition:'opacity 0.3s',
+        transition:'opacity 0.2s',
     },
     drawerHeader:{
         height:'40px',

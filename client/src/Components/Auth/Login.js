@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import { FormProvider, useForm } from "react-hook-form";
 import Card from "../Shared/Card";
 import Text from "../Shared/Text";
-import Input from "../Shared/Input";
+import Input from "../Shared/FormInput";
 import Button from "../Shared/Button";
 import Link from "../Shared/Link";
 import { login as loginApi } from "../../api/AuthApi";

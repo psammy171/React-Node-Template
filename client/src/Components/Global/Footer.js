@@ -9,6 +9,7 @@ const useStyles = makeStyles(() => ({
         width:'100%',
         display:'flex',
         justifyContent:'center',
+        height:'20px',
         backgroundColor:COLORS.primary,
     },
     footerText:{
